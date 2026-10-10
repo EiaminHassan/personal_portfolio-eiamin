@@ -211,6 +211,62 @@
         }
       });
     });
+
+    // Publication abstract modal
+    const abstractModal = document.querySelector('.abstract-modal');
+    const abstractModalTitle = abstractModal.querySelector('.abstract-modal-title');
+    const abstractModalVenue = abstractModal.querySelector('.abstract-modal-venue');
+    const abstractModalContent = abstractModal.querySelector('.abstract-modal-content');
+    let lastAbstractTrigger;
+
+    function closeAbstractModal() {
+      abstractModal.hidden = true;
+      document.body.style.overflow = '';
+      if (lastAbstractTrigger) {
+        lastAbstractTrigger.focus();
+      }
+    }
+
+    document.querySelectorAll('.read-abstract-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const publicationCard = button.closest('.publication-card');
+        const isAvailable = publicationCard.dataset.publicationStatus === 'available';
+
+        abstractModalTitle.textContent = publicationCard.querySelector('.publication-title').textContent.trim();
+        abstractModalVenue.textContent = publicationCard.querySelector('.publication-venue').textContent.trim();
+        abstractModalContent.textContent = isAvailable
+          ? publicationCard.querySelector('.publication-abstract').textContent.trim()
+          : 'This abstract is not available right now.';
+        lastAbstractTrigger = button;
+        abstractModal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        abstractModal.querySelector('.abstract-modal-close').focus();
+      });
+    });
+
+    abstractModal.querySelectorAll('[data-close-abstract-modal]').forEach(control => {
+      control.addEventListener('click', closeAbstractModal);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !abstractModal.hidden) {
+        closeAbstractModal();
+      }
+    });
+
+    // Project live-demo links
+    document.querySelectorAll('.live-demo-link').forEach(button => {
+      button.addEventListener('click', () => {
+        const demoUrl = button.dataset.demoUrl;
+        if (demoUrl) {
+          window.open(demoUrl, '_blank', 'noopener,noreferrer');
+          return;
+        }
+
+        const status = button.closest('.project-content').querySelector('.project-demo-status');
+        status.textContent = 'Not deploy yet';
+      });
+    });
   }
 
   // Load sections when DOM is ready

@@ -2,31 +2,43 @@
   <h2 class="section-title">Publications</h2>
 
   <div class="publications-container">
-    
     <!-- Publication 1 -->
-    <article class="publication-card">
+    <article class="publication-card" data-publication-status="available">
       <h3 class="publication-title">
-        Advanced Hybrid CNN-ViT Ensemble with Attention and FPN for Retinal
-        OCT Disease Classification
+        Advanced Hybrid CNN-ViT Ensemble with Attention and FPN for Retinal OCT
+        Disease Classification
       </h3>
       <p class="publication-venue">
         Venue: IDAA 2025, Daffodil International University
       </p>
 
-      <p class="publication-abstract">
-        This paper proposes an advanced hybrid CNN–ViT ensemble with
-        attention and feature pyramid networks (FPN) to achieve robust and
-        accurate retinal OCT disease classification.
+      <p class="publication-abstract" hidden>
+        Retinal diseases can be considered one of the leading causes of vision
+        loss on the global scene, and OCT imaging is crucial in the timely
+        diagnosis of the disease. In this paper, a hybrid model of deep
+        learning, which combines Convolutional Neural Networks (CNNs), Vision
+        Transformers (ViTs), Feature Pyramid Networks (FPN) and cross-modal
+        attention, is proposed to simultaneously exploit local retinal texture
+        and global structural features. An ensemble mechanism is used to combine
+        three fusion strategies into attention-based, concatenation strategy,
+        and weighted fusion to enhance robustness and accuracy. Experiments on a
+        publicly available OCTDL dataset of seven disease classes get 96.3%
+        accuracy and a 95.1% macro F1-score and outperform the traditional CNN
+        and ViT baselines. These results prove the high promise of the hybrid
+        ensemble models towards the effective retinal OCT multi-disease
+        classification.
       </p>
 
       <div class="publication-tags">
         <span class="tag">CNN</span>
         <span class="tag">Vision Transformer</span>
       </div>
+
+      <button class="read-abstract-button" type="button">Read abstract</button>
     </article>
 
     <!-- Publication 2 -->
-    <article class="publication-card">
+    <article class="publication-card" data-publication-status="available">
       <h3 class="publication-title">
         Smart Crop Monitoring: Deep Learning Architectures for Multi-Class
         Citrus Leaf Disease Recognition
@@ -35,10 +47,11 @@
         Venue: IDAA 2025, Daffodil International University
       </p>
 
-      <p class="publication-abstract">
-        This paper presents SmartCropMonitoring, a deep learning–based
-        framework that leverages advanced architectures for accurate
-        multi-class citrus leaf disease recognition.
+      <p class="publication-abstract" hidden>
+        This paper presents SmartCropMonitoring, a deep learning–based framework
+        that leverages advanced architectures for accurate multi-class citrus
+        leaf disease recognition. (Full abstract is not available right now, but
+        will be updated soon.)
       </p>
 
       <div class="publication-tags">
@@ -46,10 +59,12 @@
         <span class="tag">Transfer Learning</span>
         <span class="tag">Deep Learning</span>
       </div>
+
+      <button class="read-abstract-button" type="button">Read abstract</button>
     </article>
 
     <!-- Publication 3 -->
-    <article class="publication-card">
+    <article class="publication-card" data-publication-status="available">
       <h3 class="publication-title">
         Semi-Supervised Custom Attention UNet for Automated Knee Joint
         Segmentation in X-Ray Images
@@ -58,10 +73,34 @@
         Venue: Final Year Defense Project, Daffodil International University
       </p>
 
-      <p class="publication-abstract">
-        This paper proposes a semi-supervised custom Attention U-Net
-        framework for accurate and automated knee joint segmentation in
-        X-ray images.
+      <p class="publication-abstract" hidden>
+        Knee joint segmentation is necessary in precise analysis of knee X-ray
+        images as it allows clinicians to identify structural changes and judge
+        osteoarthritis with more reliability and consistency. Manual
+        interpretation, even though commonly used, is commonly time consuming
+        and likely to be variably affected and thus the creation of an automated
+        and consistent segmentation technique becomes extremely useful in
+        clinical practice. This paper presents a Semi-Supervised Custom
+        Attention U-Net that will provide accurate knee joint segmentation in
+        the various degrees of osteoarthritis. The study applies two publicly
+        available datasets on the IEEE DataPort and Mendeley Data, where 250
+        images, which are equally representative of all of the KL grades, were
+        selected. The images were downsampled and optimized with Adaptive
+        Gamma-CLAHE and manually labelled masks were generated with the guidance
+        of a trained medical professional to aid the supervised training phase.
+        The suggested model combines an EfficientNet-B4 encoder and a Custom
+        Attention decoder that enables it to adopt high-resolution anatomical
+        edges and preserve a powerful features localization. Moreover, the model
+        uses a semi-supervised learning scheme, which integrates labeled and
+        unlabeled images, using consistency regularization and pseudo-labeling,
+        and progressive ramp up strategy that together enhance learning
+        stability and decrease dependency on large annotated databases.
+        Experimental findings show that the model has a uniform high
+        segmentation accuracy with a Dice score of 0.94 in low grades of KL and
+        0.90 in high cases and IoU score of 0.87-0.80. The solution is both
+        scalable and precise, as it is able to segment knee joints and can be
+        useful in detecting osteoarthritis, as well as long-term monitoring of
+        diseases.
       </p>
 
       <div class="publication-tags">
@@ -70,7 +109,32 @@
         <span class="tag">Computer Vision</span>
         <span class="tag">Medical Image Segmentation</span>
       </div>
-    </article>
 
+      <button class="read-abstract-button" type="button">Read abstract</button>
+    </article>
+  </div>
+
+  <div
+    class="abstract-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="abstract-modal-title"
+    hidden
+  >
+    <div class="abstract-modal-backdrop" data-close-abstract-modal></div>
+    <div class="abstract-modal-card">
+      <button
+        class="abstract-modal-close"
+        type="button"
+        aria-label="Close abstract"
+        data-close-abstract-modal
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <span class="abstract-modal-label">Publication abstract</span>
+      <h3 class="abstract-modal-title" id="abstract-modal-title"></h3>
+      <p class="abstract-modal-venue"></p>
+      <p class="abstract-modal-content"></p>
+    </div>
   </div>
 </section>
