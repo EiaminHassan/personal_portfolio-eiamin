@@ -279,6 +279,79 @@ body.dark-mode .edu-meta {
     padding: 2rem 1.25rem;
   }
 
+  /* Research profile refresh */
+  .about-page {
+    padding-top: 5.5rem;
+  }
+
+  .about-hero {
+    align-items: flex-end;
+    margin-bottom: 5rem;
+    padding: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .about-name {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4.25rem);
+    letter-spacing: -0.045em;
+  }
+
+  .about-title,
+  .about-paragraph,
+  .edu-meta {
+    color: var(--ink-soft);
+  }
+
+  .about-title {
+    font-size: 1.05rem;
+    font-weight: 650;
+  }
+
+  .about-avatar {
+    border: 5px solid var(--surface-muted);
+  }
+
+  .social-link {
+    color: var(--ink-soft);
+  }
+
+  .social-link:hover {
+    color: var(--accent);
+  }
+
+  .about-content {
+    gap: 5rem;
+  }
+
+  .about-paragraph {
+    max-width: 66ch;
+    font-size: 1.08rem;
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .card-title,
+  .edu-degree {
+    color: var(--ink);
+  }
+
+  @media (max-width: 968px) {
+    .about-hero {
+      align-items: flex-start;
+      padding: 1.5rem;
+    }
+  }
+
   .about-avatar {
     width: 100px;
     height: 100px;
@@ -318,5 +391,80 @@ body.dark-mode .edu-meta {
 
   .social-link {
     font-size: 20px;
+  }
+}
+
+/* Education card uses the same accent-card language as the project section. */
+.about-side .education-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.about-side .education-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--accent);
+  content: "";
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.about-side .education-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.about-side .education-card:hover::before {
+  transform: scaleX(1);
+}
+
+.about-side .card-title {
+  margin-bottom: 1.4rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-side .edu-item {
+  margin: 0;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-side .edu-degree {
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.about-side .edu-meta {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .about-side .education-card {
+    padding: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-side .education-card,
+  .about-side .education-card::before {
+    transition: none;
   }
 }

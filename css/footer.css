@@ -83,6 +83,20 @@ body.dark-mode .footer-social-link:hover {
     padding: 1rem 1.25rem;
   }
 
+  .portfolio-footer {
+    border-top-color: var(--line);
+    background: var(--surface);
+  }
+
+  .footer-copyright,
+  .footer-social-link {
+    color: var(--ink-soft);
+  }
+
+  .footer-social-link:hover {
+    color: var(--accent);
+  }
+
   .footer-copyright {
     font-size: 12px;
   }
